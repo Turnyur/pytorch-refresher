@@ -12,6 +12,7 @@ import numpy as np
 from sklearn import datasets
 import matplotlib.pyplot as plt
 from tqdm import tqdm
+from TNet import TNet as Regression
 
 # 0) prepare data
 X_numpy, y_numpy =  datasets.make_regression(n_samples=10000, n_features=1, noise=20, random_state=1)
@@ -27,7 +28,8 @@ n_samples, n_features = X.shape
 # 1) model
 input_size = n_features
 output_size = 1
-model = nn.Linear(input_size, output_size)
+#model = nn.Linear(input_size, output_size)
+model = Regression(input_size, output_size)
 
 # 2) loss and optimizer
 learning_rate = 0.01
